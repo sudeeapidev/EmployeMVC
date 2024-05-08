@@ -1,0 +1,72 @@
+﻿@model EmployeMVC.Models.Employe
+
+@{
+    ViewBag.Title = "Index4";
+}
+
+<h2>Index4</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empsalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empsalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empjob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empjob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empdept)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empdept)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

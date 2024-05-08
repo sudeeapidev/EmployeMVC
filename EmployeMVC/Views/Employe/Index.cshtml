@@ -1,0 +1,53 @@
+﻿<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<h2>Employe Information</h2>
+<form>
+    <div class="container">
+        <table class="table tab-content" border="1">
+
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Email</th>
+                <th>Employee Salary</th>
+                <th>Employee Job</th>
+                <th>Employee Dept</th>
+                <th> DB Operation </th>
+            </tr>
+            @{ foreach (var e in Model)
+                {
+                    <tr>
+                        <td>
+                            @e.Empid
+                        </td>
+                        <td>
+                            @e.Empname
+                        </td>
+                        <td>
+                            @e.Empemail
+                        </td>
+                        <td>
+                            @e.Empsalary
+                        </td>
+                        <td>
+                            @e.Empjob
+                        </td>
+                        <td>
+                            @e.Empdept
+                        </td>
+                        <td style="text-align:centre;">
+                            <a class="btn btn-info" href="/Employe/Index2/?id=@e.Empid">Details</a>
+                            <a class="btn btn-warning" href="/Employe/Index3/?id=@e.Empid">Update</a>
+
+                            <a class="btn btn-danger" href="/Employe/Index4/?id=@e.Empid">Delete</a>
+                        </td>
+                    </tr>
+
+                }
+            }
+        </table>
+        <a class="btn btn-dark" href="/Employe/Index1">Insert</a>
+        
+</form>
+</div>
+
